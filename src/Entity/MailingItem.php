@@ -57,6 +57,11 @@ class MailingItem
      */
     private $mails;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="sendMailings")
+     */
+    private $sender;
+
     public function __construct()
     {
         $this->nowSend = false;
@@ -141,6 +146,17 @@ class MailingItem
         return $this->mails;
     }
 
+    public function getSender(): ?User
+    {
+        return $this->sender;
+    }
+
+    public function setSender(?User $user): ?self
+    {
+        $this->sender = $user;
+        return $this;
+    }
+
     public function json(): ?array
     {
         return [
@@ -152,7 +168,8 @@ class MailingItem
             'status' => $this->status,
             'theme' => $this->theme,
             'mailing' => $this->mailing->json(),
-            'selectedEmails' => $this->selectedEmails
+            'selectedEmails' => $this->selectedEmails,
+            'sender' => $this->sender ? $this->sender->json() : null
         ];
     }
 

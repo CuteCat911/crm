@@ -9,7 +9,7 @@ export let sendScheduledMailsMailingItem = function(mailingItemId) {
         return false;
     }
 
-    let request = this.$store.getters["api/mailingItem"].sendPlanningMails;
+    let request = this.$store.getters["api/mailingItem"].sendScheduledMails;
 
     axios({
         method: request.method,

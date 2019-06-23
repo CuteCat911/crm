@@ -44,18 +44,19 @@ class EventService
         $new_event = new Event();
         $new_event->setName($params['name']);
 
+        if (array_key_exists('parent', $params) && $params['parent']) $new_event->setParent($params['parent']);
         if (array_key_exists('description', $params) && $params['description']) $new_event->setDescription($params['description']);
-        if (array_key_exists('result', $params) &&$params['result']) $new_event->setResult($params['result']);
-        if (array_key_exists('status', $params) &&$params['status']) $new_event->setStatus($params['status']);
-        if (array_key_exists('leadTime', $params) &&$params['leadTime']) $new_event->setLeadTime($params['leadTime']);
-        if (array_key_exists('client', $params) &&$params['client']) $this->addClient($params['client'], $new_event);
-        if (array_key_exists('contractor', $params) &&$params['contractor']) $this->addContractor($params['contractor'], $new_event);
-        if (array_key_exists('mail', $params) &&$params['mail']) $this->addMail($params['mail'], $new_event);
+        if (array_key_exists('result', $params) && $params['result']) $new_event->setResult($params['result']);
+        if (array_key_exists('status', $params) && $params['status']) $new_event->setStatus($params['status']);
+        if (array_key_exists('leadTime', $params) && $params['leadTime']) $new_event->setLeadTime($params['leadTime']);
+        if (array_key_exists('client', $params) && $params['client']) $this->addClient($params['client'], $new_event);
+        if (array_key_exists('contractor', $params) && $params['contractor']) $this->addContractor($params['contractor'], $new_event);
+        if (array_key_exists('mail', $params) && $params['mail']) $this->addMail($params['mail'], $new_event);
 
         $this->em->persist($new_event);
         $this->em->flush();
 
-        return true;
+        return $new_event;
 
     }
 

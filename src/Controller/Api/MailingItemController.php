@@ -5,6 +5,7 @@ namespace App\Controller\Api;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\User\UserInterface;
 use App\View\AjaxResponse;
 use App\Entity\Mailing;
 use App\Entity\MailingItem;
@@ -112,7 +113,7 @@ class MailingItemController extends AbstractController
     /**
      * @Route("{id}/send-mails/now", name="send-now-mails_mailing-item_api")
      */
-    public function sendNowMailsMailingItemApiAction(Request $request, AjaxResponse $response, $id, MailerService $mailer, CronJobService $cron_job_service)
+    public function sendNowMailsMailingItemApiAction(Request $request, AjaxResponse $response, $id, UserInterface $user = null, MailerService $mailer, CronJobService $cron_job_service)
     {
 
         $em = $this->getDoctrine()->getManager();
@@ -126,7 +127,7 @@ class MailingItemController extends AbstractController
         if ($mailing_item->getStatus() == 1) return $response->setMessage('')->json();
 
         $mailer->sendMails($mailing_item);
-        $mailing_item->setStatus(1);
+        $mailing_item->setStatus(1)->setSender($user);
         $cron_job_service->createDelayJob('mailer:setSendedMailsData', '+5 minutes');
         $em->flush();
 
@@ -137,7 +138,7 @@ class MailingItemController extends AbstractController
     /**
      * @Route("{id}/send-mails/scheduled", name="send-planning-mails_mailing-item_api")
      */
-    public function sendPlanningMailsMailingItemApiAction(Request $request, AjaxResponse $response, $id, CronJobService $cron_job_service)
+    public function sendPlanningMailsMailingItemApiAction(Request $request, AjaxResponse $response, $id, UserInterface $user = null, CronJobService $cron_job_service)
     {
 
         $em = $this->getDoctrine()->getManager();
@@ -150,6 +151,7 @@ class MailingItemController extends AbstractController
         if (!$mailing_item) return $response->setMessage('')->json();
         if ($mailing_item->getStatus() == 1) return $response->setMessage('')->json();
 
+        $mailing_item->setSender($user);
         $cron_job_service->createScheduledJob('mailer:addSendScheduledMails', $mailing_item->getSendTime(), ['mailingItemId' => $mailing_item->getId()]);
 
         return $response->setSuccess()->json();

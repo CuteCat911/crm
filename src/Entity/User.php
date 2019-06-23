@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -71,11 +73,17 @@ class User implements UserInterface, \Serializable
      */
     private $position;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\MailingItem", mappedBy="sender")
+     */
+    private $sendMailings;
+
     public function __construct()
     {
         $this->roles = ["ROLE_USER"];
         $this->blocked = false;
         $this->sessionTime = 1200000;
+        $this->sendMailings = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -221,6 +229,11 @@ class User implements UserInterface, \Serializable
             $this->login,
             $this->password
             ) = unserialize($serialized);
+    }
+
+    public function getSendMailings(): ?Collection
+    {
+        return $this->sendMailings;
     }
 
     public function json(): ?array

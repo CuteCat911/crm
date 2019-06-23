@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EventRepository")
@@ -46,6 +48,16 @@ class Event
     private $leadTime;
 
     /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Event", mappedBy="parent")
+     */
+    private $children;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Event", inversedBy="children")
+     */
+    private $parent;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Client", inversedBy="events")
      */
     private $client;
@@ -63,6 +75,7 @@ class Event
     public function __construct()
     {
         $this->status = 0;
+        $this->children = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -122,6 +135,22 @@ class Event
     public function setLeadTime($time): ?self
     {
         $this->leadTime = $time;
+        return $this;
+    }
+
+    public function getChildren(): ?Collection
+    {
+        return $this->children;
+    }
+
+    public function getParent(): ?Event
+    {
+        return $this->parent;
+    }
+
+    public function setParent(?Event $parent): ?self
+    {
+        $this->parent = $parent;
         return $this;
     }
 

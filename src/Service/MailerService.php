@@ -7,6 +7,7 @@ use Symfony\Component\Templating\EngineInterface;
 use App\Entity\MailingItem;
 use App\Entity\Email;
 use App\Entity\Mail;
+use Symfony\Component\Validator\Constraints\Date;
 
 class MailerService
 {
@@ -31,10 +32,16 @@ class MailerService
 
         if (!count($selected_emails)) return false;
 
+        $event = $this->eventService->createEvent([
+            'name' => 'Отправлена ' . $mailing_item->getMailing()->getName(),
+            'status' => 1,
+            'leadTime' => new \DateTime()
+        ]);
+
         foreach ($selected_emails as $email_id) {
 
             $email = $this->em->getRepository(Email::class)->find($email_id);
-            $this->sendMail($email, $mailing_item);
+            $this->sendMail($email, $mailing_item, $event);
 
         }
 
@@ -42,7 +49,7 @@ class MailerService
 
     }
 
-    public function sendMail(?Email $email, MailingItem $mailing_item)
+    public function sendMail(?Email $email, MailingItem $mailing_item, $main_event = false)
     {
 
         $client = $email->getClient();
@@ -80,6 +87,7 @@ class MailerService
         $this->em->flush();
         $mailing = $mailing_item->getMailing();
         $this->eventService->createEvent([
+            'parent' => $main_event ? $main_event : null,
             'name' => 'Отправлено письмо из ' . $mailing->getName() . ', с темой письма: ' . $mailing_item->getTheme() . '. Для ' . $email->getEmail(),
             'status' => 1,
             'leadTime' => $new_mail->getSendTime(),
