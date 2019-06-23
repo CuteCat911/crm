@@ -1,0 +1,96 @@
+{% extends 'mailings/layouts/index.html.twig' %}
+
+{% import 'mailings/macros/titles.html.twig' as titles %}
+{% import 'mailings/macros/indents.html.twig' as indents %}
+
+{% block content %}
+
+    {% include 'mailings/blocks/manager.html.twig' %}
+    <tr>
+        <td style="padding: 16px 0 18px; line-height: 1.4;">
+            <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto; width: 100%;">
+                <tr>
+                    <td style="padding: 0 16px;">
+                        Добрый день, предлагаем вашему вниманию сортамент рулонной стали.
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {{ titles.row('Цены:') }}
+    <tr>
+        <td style="padding-bottom: 32px; line-height: 1.4;">
+            <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;" width="100%">
+                <tr>
+                    <td style="padding: 12px 16px 16px; width: 64%;">
+                        <b>Лист/рулон х/к:</b> (<span style="color: #fe8100;">08ПС, 08Ю, 30ХГСА, СТ10, СТ20, СТ40, СТ50, 65Г, 60С2А, У8А</span>), размеры: (0,3&nbsp;мм до&nbsp;5&nbsp;мм).
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 36%;">
+                        Цена: <span style="color: #fe8100;"><b>от&nbsp;39&nbsp;000&nbsp;руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr style="background-color: #f4f4f4;">
+                    <td style="padding: 12px 16px 16px; width: 64%;">
+                        <b>Лист/рулон х/к (оцинкованные):</b> (<span style="color: #fe8100;">08ПС, 08Ю</span>), размеры: (0,25&nbsp;мм до&nbsp;3,5&nbsp;мм).
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 36%;">
+                        Цена: <span style="color: #fe8100;"><b>от&nbsp;55&nbsp;000&nbsp;руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px 16px 16px; width: 64%;">
+                        <b>Лист/рулон х/к (окрашенные):</b> (<span style="color: #fe8100;">08ПС, 08Ю</span>), размеры: (0,3&nbsp;мм до&nbsp;1,5&nbsp;мм).
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 36%;">
+                        Цена: <span style="color: #fe8100;"><b>от&nbsp;65&nbsp;000&nbsp;руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr style="background-color: #f4f4f4;">
+                    <td style="padding: 12px 16px 16px; width: 64%;">
+                        <b>Лист/рулон х/к (нержавеющие):</b> (<span style="color: #fe8100;">08X17/AISI430, 08X18H10/AISI304, AISI409L, AISI201, AISI310, AISI904, AISI2205, AISI430, 12X18H10T/AISI321, AISI316L, XH78T/ЭИ435, XH38ВT/ЭИ703, Х20Н80, ХН60ВТ, 36НХТЮ</span>), размеры: (0,4&nbsp;мм до&nbsp;1,5&nbsp;мм).
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 36%;">
+                        Цена: <span style="color: #fe8100;"><b>от&nbsp;115&nbsp;000&nbsp;руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px 16px 16px; width: 64%;">
+                        <b>Лента/штрипс:</b> (<span style="color: #fe8100;">08ПС, 08Ю, 30ХГСА, СТ10, СТ20, СТ40, СТ50</span>), размеры: (0,3&nbsp;мм до&nbsp;3&nbsp;мм).
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 36%;">
+                        Цена: <span style="color: #fe8100;"><b>от&nbsp;41&nbsp;000&nbsp;руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr style="background-color: #f4f4f4;">
+                    <td style="padding: 12px 16px 16px; width: 64%;">
+                        <b>Лента/штрипс (оцинкованные):</b> размеры: (0,25&nbsp;мм до&nbsp;4&nbsp;мм).
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 36%;">
+                        Цена: <span style="color: #fe8100;"><b>от&nbsp;55&nbsp;000&nbsp;руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px 16px 16px; width: 64%;">
+                        <b>Лента/штрипс (окрашенные):</b> размеры: (0,35&nbsp;мм до&nbsp;1,5&nbsp;мм).
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 36%;">
+                        Цена: <span style="color: #fe8100;"><b>от&nbsp;70&nbsp;000&nbsp;руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr style="background-color: #f4f4f4;">
+                    <td style="padding: 12px 16px 16px; width: 64%;">
+                        <b>Лента/штрипс (нержавеющие):</b> (<span style="color: #fe8100;">AISI201, 08X18H10/AISI304, 12X18H10T/AISI321, 20X20H14C2, Х20Н80</span>), размеры: (0,15&nbsp;мм до&nbsp;2&nbsp;мм).
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 36%;">
+                        Цена: <span style="color: #fe8100;"><b>от&nbsp;115&nbsp;000&nbsp;руб.</b></span> /тонна
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {% include 'mailings/blocks/services.html.twig' %}
+    {{ indents.big() }}
+    {% include 'mailings/blocks/stores.html.twig' %}
+    {% include 'mailings/blocks/note.html.twig' %}
+
+{% endblock %}

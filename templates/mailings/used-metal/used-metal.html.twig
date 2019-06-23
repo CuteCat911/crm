@@ -1,0 +1,88 @@
+{% extends 'mailings/layouts/index.html.twig' %}
+
+{% import 'mailings/macros/titles.html.twig' as titles %}
+{% import 'mailings/macros/indents.html.twig' as indents %}
+
+{% block content %}
+
+    {% include 'mailings/blocks/manager.html.twig' %}
+    <tr>
+        <td style="padding: 16px 0 18px; line-height: 1.4;">
+            <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto; width: 100%;">
+                <tr>
+                    <td style="padding: 0 16px;">
+                        Добрый день, предлагаем вашему вниманию сортамент б/у металлопродукции.
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {{ titles.row('Цена б/у металла:') }}
+    <tr>
+        <td style="padding-bottom: 32px; line-height: 1.4">
+            <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;" width="100%">
+                <tr>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b>Балка</b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>32 990 руб.</b></span> /тонну
+                    </td>
+                </tr>
+                <tr style="background-color: #f4f4f4;">
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b>Швеллер</b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>40 990 руб.</b></span> /тонну
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b>Уголок</b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>34 990 руб.</b></span> /тонну
+                    </td>
+                </tr>
+                <tr style="background-color: #f4f4f4;">
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b>Шпунт Ларсена</b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>51 990 руб.</b></span> /тонну
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b>Лист</b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>29 990 руб.</b></span> /тонну
+                    </td>
+                </tr>
+                <tr style="background-color: #f4f4f4;">
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b>Релсь</b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>31 500 руб.</b></span> /тонну
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b>Труба</b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>31 300 руб.</b></span> /тонну
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {% include 'mailings/blocks/services.html.twig' %}
+    {{ indents.big() }}
+    {% include 'mailings/blocks/stores.html.twig' %}
+    {% include 'mailings/blocks/note.html.twig' %}
+
+{% endblock %}

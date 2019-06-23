@@ -16,6 +16,7 @@ class MailController extends AbstractController
 
         $template = 'mailings/' . $template . '/' . $template . '.html.twig';
         return $this->render($template, [
+            'preview' => true,
             'mail_id' => 1,
             'theme' => 'Тестовая тема'
         ]);
