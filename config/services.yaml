@@ -7,9 +7,7 @@ parameters:
     locale: 'ru'
     router.request_context.host: 'metalmax.ru'
     router.request_context.scheme: 'http'
-    router.request_context.base_url: '/'
-    asset.request_context.base_path: '%router.request_context.base_url%'
-    asset.request_context.secure: true
+    router.request_context.base_url: ''
 
 services:
     # default configuration for services in *this* file
