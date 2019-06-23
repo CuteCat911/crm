@@ -5,7 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'ru'
-    router.request_context.host: 'metalmax.ru'
+    router.request_context.host: 'crm.metalmax.ru'
     router.request_context.scheme: 'http'
     router.request_context.base_url: ''
 
