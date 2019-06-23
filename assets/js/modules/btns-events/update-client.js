@@ -4,6 +4,8 @@ export let updateClient = function() {
 
     let checkData = checkForm(this.$store.getters['client/all'], true);
 
+    console.log(checkData);
+
     if (!checkData.status) {
         if (DEV) console.error();
         return false;

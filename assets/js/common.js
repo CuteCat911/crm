@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (["newClient", "editClient", "newMailing"].includes(this.pageName)) {
                     return "main--without-aside"
-                } else if (["login"]) {
+                } else if (["login"].includes(this.pageName)) {
                     return "main--only-content";
                 }
 
