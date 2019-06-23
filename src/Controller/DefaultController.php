@@ -9,7 +9,7 @@ class DefaultController extends AbstractController
 {
 
     /**
-     * @Route("/{path}", name="crm", requirements={"path"="^((?!api|endpoint|preview-mail).)*"})
+     * @Route("/{path}", name="crm", requirements={"path"="^((?!api|endpoint|preview-mail|storage).)*"})
      */
     public function crmAction()
     {

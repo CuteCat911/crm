@@ -31,4 +31,6 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/storage, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/user/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/mail/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
