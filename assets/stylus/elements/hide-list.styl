@@ -1,0 +1,21 @@
+.hide-list
+    margin-bottom: remSize(24px)
+
+    &__btn-wrapper
+        margin-bottom: remSize(12px)
+
+    &__btn
+        display: inline-block
+        font-size: remSize(15px)
+        color: alpha($text, 0.6)
+        border-bottom: remSize(1px) dashed alpha($text, 0.6)
+        transition: color $t-default, border $t-default
+        cursor: pointer
+
+        &:hover
+            color: $emerald
+            border-color: $emerald
+
+        &:active
+            color: $dark-emerald
+            border-color: $dark-emerald

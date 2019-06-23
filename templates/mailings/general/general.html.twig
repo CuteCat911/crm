@@ -1,0 +1,185 @@
+{% extends 'mailings/layouts/index.html.twig' %}
+
+{% import 'mailings/macros/titles.html.twig' as titles %}
+{% import 'mailings/macros/indents.html.twig' as indents %}
+{% import 'mailings/macros/messages.html.twig' as messages %}
+
+{% block content %}
+
+    {% include 'mailings/blocks/manager.html.twig' %}
+    <tr>
+        <td style="padding: 16px 0 18px;">
+            <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                <tr>
+                    <td style="padding: 0 16px 12px; line-height: 1.4;">
+                        Предлагаем вам широкий выбор металлопроката, у&nbsp;нас <a href="http://metalmax.ru/katalog/" target="_blank" style="color: #fe8100;">на&nbsp;сайте</a> представлено более 1000 различных позиций.
+                        Так&nbsp;же мы оказываем широкий спектр услуг по&nbsp;<a href="http://metalmax.ru/uslugi/" target="_blank" style="color: #fe8100;">металлообработке</a>.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0 16px 12px; line-height: 1.4;">
+                        Наши менеджеры всегда готовы помочь вам подобрать все необходимые позиции металлопроката, проконсультировать по&nbsp;ценам, организовать доставку, металлообработку и&nbsp;другие услуги, оказываемые нашей компанией.
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {{ titles.row('Сортамент нашей металлопродукции:') }}
+    <tr>
+        <td style="padding-bottom: 32px;">
+            <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto; padding: 0;" width="100%">
+                <tr>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b><a href="http://metalmax.ru/katalog/armatura/" target="_blank" style="color: #000000;">Арматура</a></b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>38 690 руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr style="background-color: #f4f4f4;">
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b><a href="http://metalmax.ru/katalog/balka/" target="_blank" style="color: #000000;">Балка</a></b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>31 300 руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b><a href="http://metalmax.ru/katalog/shveller/" target="_blank" style="color: #000000;">Швеллер</a></b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>46 790 руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr style="background-color: #f4f4f4;">
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b><a href="http://metalmax.ru/katalog/ugolok/" target="_blank" style="color: #000000;">Уголок</a></b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>43 490 руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b><a href="http://metalmax.ru/katalog/krug/" target="_blank" style="color: #000000;">Круг</a></b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>41 990 руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr style="background-color: #f4f4f4;">
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b><a href="http://metalmax.ru/katalog/polosa/" target="_blank" style="color: #000000;">Полоса</a></b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>51 990 руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b><a href="http://metalmax.ru/katalog/list/" target="_blank" style="color: #000000;">Лист</a></b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>45 990 руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr style="background-color: #f4f4f4;">
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b><a href="http://metalmax.ru/katalog/profnastil/" target="_blank" style="color: #000000;">Профнастил</a></b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>171 руб.</b></span> /погонный метр
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b><a href="http://metalmax.ru/katalog/lenta/" target="_blank" style="color: #000000;">Лента</a></b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>65 990 руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr style="background-color: #f4f4f4;">
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b><a href="http://metalmax.ru/katalog/provoloka/" target="_blank" style="color: #000000;">Проволока</a></b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>47 090 руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b><a href="http://metalmax.ru/katalog/shestigrannik/" target="_blank" style="color: #000000;">Шестигранник</a></b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>54 990 руб.</b></span> /тонна
+                    </td>
+                </tr>
+                <tr style="background-color: #f4f4f4;">
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        <b><a href="http://metalmax.ru/katalog/truba/" target="_blank" style="color: #000000;">Труба</a></b>
+                    </td>
+                    <td style="padding: 12px 16px 16px; width: 50%;">
+                        Цена от: <span style="color: #fe8100;"><b>29 000 руб.</b></span> /тонна
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {{ titles.row('Услуги по металлообработке:') }}
+    <tr>
+        <td style="padding: 12px 16px; line-height: 1.4;">
+            <a href="http://metalmax.ru/uslugi/plazmennaya-rezka-metalla" target="_blank" style="color: #000000;">Плазменная резка</a>,
+            <a href="http://metalmax.ru/uslugi/gazovaya-rezka-metalla" target="_blank" style="color: #000000;">Газовая резка</a>,
+            <a href="http://metalmax.ru/uslugi/lazernaya-rezka-metalla" target="_blank" style="color: #000000;">Лазерная резка</a>,
+            <a href="http://metalmax.ru/uslugi/lazernaya-rezka-trub" target="_blank" style="color: #000000;">Лазерная резка труб</a>,
+            <a href="http://metalmax.ru/uslugi/valcovka-metalla" target="_blank" style="color: #000000;">Вальцовка</a>,
+            <a href="http://metalmax.ru/uslugi/gibka-listovoy-stali-profilya-i-trub" target="_blank" style="color: #000000;">Гибка листовой стали, профиля и труб</a>,
+            <a href="http://metalmax.ru/uslugi/rezka-i-rubka-sortovogo-prokata" target="_blank" style="color: #000000;">Резка и рубка сортового проката</a>,
+            <a href="http://metalmax.ru/uslugi/mekhanicheskaya-obrabotka" target="_blank" style="color: #000000;">Механическая обработка металла</a>,
+            <a href="http://metalmax.ru/uslugi/svarka-metalla" target="_blank" style="color: #000000;">Сварка</a>,
+            <a href="http://metalmax.ru/uslugi/peskostrujnaya-obrabotka-metalla" target="_blank" style="color: #000000;">Пескоструйная обработка</a>,
+            <a href="http://metalmax.ru/uslugi/pokraska-metalla" target="_blank" style="color: #000000;">Покраска металла</a>,
+            <a href="http://metalmax.ru/uslugi/nikelirovanie-metalla" target="_blank" style="color: #000000;">Никелирование</a>,
+            <a href="http://metalmax.ru/uslugi/olovyanirovanie-metalla" target="_blank" style="color: #000000;">Оловянирование</a>,
+            <a href="http://metalmax.ru/uslugi/hromirovanie-metalla" target="_blank" style="color: #000000;">Хромирование</a>,
+            <a href="http://metalmax.ru/uslugi/cinkovanie-metalla" target="_blank" style="color: #000000;">Цинкование</a>
+        </td>
+    </tr>
+    {{ indents.big() }}
+    {{ titles.emptyRow('Наши склады:') }}
+    <tr>
+        <td style="padding-bottom: 24px;">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td style="padding: 0 8px; width: 33.3333%; text-align: center; vertical-align: top;">
+                        <span style="padding-bottom: 4px; display: block; color: #fe8100;"><b>В Подольске</b></span>
+                        <span style="font-size: 15px;">Подольский район, Большое Толбино, складской комплекс «СУ-14»</span>
+                    </td>
+                    <td style="padding: 0 8px; width: 33.3333%; text-align: center; vertical-align: top;">
+                        <span style="padding-bottom: 4px; display: block; color: #fe8100;"><b>В Ивантеевке</b></span>
+                        <span style="font-size: 15px;">г. Ивантеевка, Центральный проезд, дом 27</span>
+                    </td>
+                    <td style="padding: 0 8px; width: 33.3333%; text-align: center; vertical-align: top;">
+                        <span style="padding-bottom: 4px; display: block; color: #fe8100;"><b>В Москве</b></span>
+                        <span style="font-size: 15px;">г. Москва, улица Стахановская, дом 19</span>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 8px 0 24px; text-align: center;">
+            <span style="display: block; padding-bottom: 10px;">
+                <span style="display: block; width: 100%; height: 1px; background-color: #e1e1e1;"></span>
+            </span>
+            <span style="font-size: 18px;"><b>Надеемся увидеть вас в&nbsp;числе наших клиентов.</b></span>
+            <span style="display: block; padding-top: 10px;">
+                <span style="display: block; width: 100%; height: 1px; background-color: #e1e1e1;"></span>
+            </span>
+        </td>
+    </tr>
+    {{ messages.automatic() }}
+
+{% endblock %}

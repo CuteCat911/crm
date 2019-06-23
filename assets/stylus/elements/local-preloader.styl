@@ -1,0 +1,12 @@
+.local-preloader
+    position: relative
+    opacity: 0
+    z-index: -10
+    transition: opacity $t-default, z-index $t-default
+
+    &.is-active
+        opacity: 1
+        z-index: 10
+
+    &__indicator
+        loader-2($dark-emerald, $emerald, $light-emerald)

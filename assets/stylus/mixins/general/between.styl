@@ -1,0 +1,18 @@
+/*
+	between - ver. 1.0.0
+	-----
+	Миксин для удобной работы с медиа запросами, связанными с интервалом, который находится от минимальной ширины до максимальной.
+	Например:
+	
+		обычно записывается 
+			@media (min-width: 640px) and (max-width: 1024px)
+				// code here...
+				
+		при помощи миксина
+			+between(640px, 1024px)
+				// code here...
+*/
+
+between($minWidth, $maxWidth)
+    @media (min-width $minWidth) and (max-width $maxWidth)
+        {block}

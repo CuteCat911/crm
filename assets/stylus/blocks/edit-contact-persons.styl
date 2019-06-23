@@ -1,0 +1,16 @@
+.edit-contact-persons
+    margin-left: remSize(-16px)
+    display: flex
+    flex-wrap: wrap
+    width: s("calc(100% + (%s * 2))", remSize(16px))
+
+    &__person
+        margin: 0 remSize(16px) remSize(32px)
+        position: relative
+        colWidth(1, 2, 16px, 16px)
+
+        &:hover
+
+            & .contact-person-btns
+                opacity: 1
+                z-index: 2

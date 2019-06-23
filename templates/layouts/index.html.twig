@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="">
+
+{% include 'general/head.html.twig' %}
+
+<body>
+
+    <div class="page-wrapper" id="crm">
+        <div class="page-content">
+
+            <v-header v-if="!hideHeader"></v-header>
+            <div class="header-indent" v-if="!hideHeader"></div>
+
+            <main class="main" :class="mainTypeClass">
+
+                <preloader></preloader>
+                {% block content %}{% endblock %}
+
+            </main>
+
+        </div>
+
+        <popups></popups>
+
+    </div>
+
+    {% block prepend_javascripts %}{% endblock %}
+    {% block javascripts %}
+        <script src="{{ asset('build/runtime.js') }}"></script>
+        <script src="{{ asset('build/common_js.js') }}"></script>
+    {% endblock %}
+    {% block append_javascripts %}{% endblock %}
+
+</body>
+</html>

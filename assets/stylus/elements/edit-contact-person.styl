@@ -1,0 +1,28 @@
+.edit-contact-person
+    padding: remSize(24px) remSize(32px) remSize(36px)
+    background-color: alpha($light-gray, 0.6)
+    border-radius: $default-radius
+    box-sizing: border-box
+    box-shadow: $shadow
+
+    &__title
+        margin-bottom: remSize(24px)
+        padding-bottom: remSize(10px)
+        font-size: remSize(18px)
+        font-weight: 500
+        color: $dark-emerald
+        border-bottom: remSize(1px) solid alpha($gray, 0.5)
+
+    &__info
+        margin-bottom: remSize(36px)
+
+    &__full-name
+        margin-bottom: remSize(16px)
+        margin-left: remSize(-8px)
+        display: flex
+        align-items: center
+        width: s("calc(100% + (%s * 2))", remSize(8px))
+
+        & .form-input
+            margin: 0 remSize(8px)
+            colWidth(1, 3, 8px, 8px)

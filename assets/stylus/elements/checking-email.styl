@@ -1,0 +1,65 @@
+.checking-email
+    margin-right: remSize(24px)
+    margin-bottom: remSize(8px)
+    position: relative
+    display: flex
+    align-items: center
+    font-size: remSize(15px)
+    cursor: pointer
+    outline: none
+
+    &:after
+        content: ""
+        position: absolute
+        top: 50%
+        right: remSize(-12px)
+        width: remSize(1px)
+        height: 100%
+        background-color: alpha($gray, 0.8)
+        transform: translate(100%, -50%)
+
+    &:last-child
+        margin-right: 0
+
+        &:after
+            display: none
+
+    &:hover
+
+        & ^[0]__email
+            color: $emerald
+
+        & ^[0]__check
+            border-color: $emerald
+
+    &__name
+        margin-right: remSize(4px)
+        font-weight: 500
+
+    &__email
+        margin-right: remSize(8px)
+        transition: color $t-default
+
+    &__check
+        position: relative
+        width: remSize(16px)
+        height: @width
+        border-radius: $default-radius
+        border: remSize(1px) solid $gray
+        box-sizing: border-box
+        transition: background-color $t-default, border-color $t-default
+
+        & .svg-icon
+            centered()
+            width: 72%
+            height: @width
+            opacity: 0
+            transition: opacity $t-default, fill $t-default
+
+        &.is-active
+            background-color: alpha($light-emerald, 0.5)
+            border-color: $dark-emerald
+
+            & .svg-icon
+                opacity: 1
+                fill: $dark-emerald

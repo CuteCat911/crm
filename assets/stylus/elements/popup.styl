@@ -1,0 +1,113 @@
+.popup
+    padding-top: remSize(24px)
+    padding-bottom: remSize(48px)
+    centered("wrong-center")
+    max-width: 90%
+    width: remSize(480px)
+    opacity: 0
+    z-index: -2
+    overflow: visible
+    transition: opacity $t-popup, z-index $t-popup
+
+    &.is-open
+        opacity: 1
+        z-index: 2
+
+    &.is-big
+        margin-bottom: remSize(48px)
+        top: remSize(64px)
+        transform: translateX(-50%)
+
+    &__close
+        position: absolute
+        top: remSize(-12px)
+        right: remSize(-8px)
+        width: remSize(24px)
+        height: @width
+        transform: translate(100%, -100%)
+        cursor: pointer
+        outline: none
+
+        &:hover
+
+            & .svg-icon
+                fill: $blue
+
+        &:active
+
+            & .svg-icon
+                fill: $dark-blue-2
+
+        & .svg-icon
+            fullSize()
+            fill: $emerald
+            transition: fill $t-default
+
+    &__title-wrapper
+        margin: 0 auto remSize(16px)
+        padding-bottom: remSize(12px)
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        max-width: 90%
+        width: remSize(420px)
+
+        &:after
+            content: ""
+            position: absolute
+            left: 50%
+            bottom: 0
+            width: remSize(120px)
+            height: remSize(2px)
+            background-color: $emerald
+            transform: translateX(-50%)
+
+    &__title-icon
+        margin-right: remSize(12px)
+        position: relative
+        width: remSize(22px)
+        height: @width
+
+        &--warn
+
+            & .svg-icon
+                fill: $yellow
+
+        & .svg-icon
+            fullSize()
+
+    &__title
+        font-size: remSize(24px)
+        font-weight: 500
+        color: $dark-blue-2
+
+    &__description
+        margin: 0 auto remSize(16px)
+        max-width: 100%
+        width: remSize(360px)
+        text-align: center
+        letter-spacing: remSize(0.4px)
+
+        & p
+            line-height: 1.5
+
+    &__btns-wrapper
+        display: flex
+        justify-content: center
+
+    &__btn
+        margin-right: remSize(16px)
+        min-width: remSize(120px)
+
+        &:last-child
+            margin-right: 0
+
+    & .hide-list
+        margin-bottom: remSize(32px)
+
+        &__btn-wrapper
+            text-align: center
+
+        & .simple-preview-counterparty
+            justify-content: center

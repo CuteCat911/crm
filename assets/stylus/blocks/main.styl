@@ -1,0 +1,45 @@
+$aside-margin = remSize(32px)
+$aside-width = remSize(220px)
+$aside-btns-margin = remSize(32px)
+$aside-btns-width = remSize(36px)
+
+.main
+
+    &--only-content
+
+        & ^[0]__aside-wrapper,
+        & ^[0]__aside-btns-wrapper
+            display: none
+
+        & ^[0]__content
+            width: s("calc(100% - (%s + %s))", $aside-btns-margin, $aside-btns-width)
+
+    &--without-aside
+
+        & ^[0]__aside-wrapper
+            display: none
+
+        & ^[0]__content
+            width: 100%
+
+    &--without-aside-btns
+
+        & ^[0]__aside-btns-wrapper
+            display: none
+
+        & ^[0]__content
+            width: s("calc(100% - (%s + %s))", $aside-margin, $aside-width)
+
+    & .wrapper
+        display: flex
+
+    &__aside-wrapper
+        margin-right: $aside-margin
+        width: $aside-width
+
+    &__content
+        width: s("calc(100% - (%s + %s + %s + %s))", $aside-margin, $aside-width, $aside-btns-margin, $aside-btns-width)
+
+    &__aside-btns-wrapper
+        margin-left: $aside-btns-margin
+        width: $aside-btns-width

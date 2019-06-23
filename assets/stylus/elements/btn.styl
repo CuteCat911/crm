@@ -1,0 +1,41 @@
+.btn
+    padding: remSize(8px) remSize(18px)
+    display: inline-block
+    font-size: remSize(14px)
+    color: $white
+    text-align: center
+    background-color: $emerald
+    border: remSize(2px) solid $emerald
+    border-radius: $default-radius
+    box-sizing: border-box
+    transition: color $t-default, background-color $t-default, border $t-default
+    cursor: pointer
+    outline: none
+
+    &:hover
+        background-color: $light-emerald
+        border-color: $light-emerald
+
+    &:active
+        background-color: $dark-emerald
+        border-color: $dark-emerald
+
+    &--empty
+        color: $emerald
+        background-color: transparent
+
+        &:hover
+            color: $white
+            background-color: $light-emerald
+            border-color: $emerald
+
+        &:active
+            color: $white
+            background-color: $dark-emerald
+
+    &.is-disabled
+        background-color: $gray
+        border-color: $gray
+        opacity: 0.3
+        cursor: default
+        pointer-events: none

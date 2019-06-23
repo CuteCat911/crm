@@ -1,0 +1,38 @@
+.count-on-page
+    display: flex
+    align-items: center
+    font-size: remSize(15px)
+
+    &__title
+        margin-right: remSize(12px)
+        color: $gray
+
+    &__list
+        display: flex
+
+    &__item
+        margin-right: remSize(6px)
+        font-weight: 500
+        color: $blue
+        border-bottom: remSize(1px) solid transparent
+        transition: color $t-default, border $t-default
+        cursor: pointer
+
+        &:last-child
+            margin-right: 0
+
+        &:hover
+            color: $emerald
+
+        &:active
+            color: $dark-emerald
+
+        &.is-active
+            color: $emerald
+            border-bottom-color: $emerald
+            cursor: default
+            pointer-events: none
+
+            &:hover,
+            &:active
+                color: $emerald

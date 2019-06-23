@@ -1,0 +1,18 @@
+$count-on-page-width = remSize(196px)
+$display-type-width = remSize(68px)
+
+.pagination
+    display: flex
+    align-items: center
+
+    &__pages
+        margin-right: remSize(16px)
+        width: s("calc(100% - (%s + %s + (%s * 4)))", $count-on-page-width, $display-type-width, remSize(16px))
+
+    &__count-on-page
+        margin: 0 remSize(16px)
+        width: $count-on-page-width
+
+    &__display-type
+        margin-left: remSize(16px)
+        width: $display-type-width

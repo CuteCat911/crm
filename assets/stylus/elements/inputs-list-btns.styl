@@ -1,0 +1,25 @@
+.inputs-list-btns
+    display: flex
+    align-items: center
+
+    &__btn
+        margin-right: remSize(6px)
+        position: relative
+        width: remSize(28px)
+        height: @width
+        background-color: $blue
+        border-radius: $default-radius
+        transition: background-color $t-default
+        cursor: pointer
+
+        &:last-child
+            margin-right: 0
+
+        &:hover
+            background-color: $dark-blue-2
+
+        & .svg-icon
+            centered()
+            width: 50%
+            height: @width
+            fill: $white

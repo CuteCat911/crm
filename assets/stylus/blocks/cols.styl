@@ -1,0 +1,10 @@
+.cols
+    margin-left: remSize(-16px)
+    display: flex
+    width: s("calc(100% + (%s * 2))", remSize(16px))
+
+    &--2
+
+        & ^[0]__col
+            margin: 0 remSize(16px)
+            colWidth(1, 2, 16px, 16px)

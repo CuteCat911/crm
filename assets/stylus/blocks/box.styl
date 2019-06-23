@@ -1,0 +1,19 @@
+.box
+    padding: remSize(16px) remSize(24px) remSize(18px)
+    background-color: $white
+    border-top: remSize(4px) solid $light-emerald
+    border-radius: $default-radius
+    box-sizing: border-box
+    box-shadow: $shadow
+    overflow: hidden
+
+    &--page
+        padding: remSize(16px) remSize(42px) remSize(18px)
+
+        & .page
+
+            &__title-wrapper
+
+                &:after
+                    left: remSize(-42px)
+                    width: s("calc(100% + (%s * 2))", remSize(42px))

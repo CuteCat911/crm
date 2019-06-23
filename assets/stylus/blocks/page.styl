@@ -1,0 +1,23 @@
+.page
+
+    &--clients
+
+        & .row-btns
+            margin-bottom: remSize(36px)
+
+    &__title-wrapper
+        margin-bottom: remSize(24px)
+        padding-bottom: remSize(18px)
+        position: relative
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        &:after
+            content: ""
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 100%
+            height: remSize(1px)
+            background-color: $light-gray

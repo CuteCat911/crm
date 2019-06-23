@@ -1,0 +1,59 @@
+.header
+    padding: remSize(10px) 0 remSize(12px)
+    background-color: $dark-blue
+
+    & .wrapper
+        display: flex
+        align-items: center
+
+    &__logo
+        margin-right: remSize(32px)
+        padding-right: remSize(16px)
+        position: relative
+        font-family: $kaushan-font
+        font-size: remSize(28px)
+        letter-spacing: remSize(0.8px)
+
+        &:after
+            content: ""
+            position: absolute
+            top: 50%
+            right: 0
+            width: remSize(1px)
+            height: 100%
+            background-color: $white
+            transform: translateY(-50%)
+
+    &__logo-text
+        color: $white
+
+        &:hover
+            color: $emerald
+
+        &.is-main
+
+            &:hover
+                color: $white
+
+    &__nav
+        display: flex
+        align-items: center
+        letter-spacing: remSize(0.2px)
+
+    &__nav-link
+        margin-right: remSize(8px)
+        padding: remSize(8px) remSize(16px) remSize(6px)
+        color: $white
+        border-radius: $default-radius
+        transition: background-color $t-default
+
+        &:last-child
+            margin-right: 0
+
+        &:hover
+            background-color: $blue
+
+        &.is-active
+            background-color: $emerald
+            cursor: default
+            pointer-events: none

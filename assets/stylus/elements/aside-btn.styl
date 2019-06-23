@@ -1,0 +1,32 @@
+.aside-btn
+    margin-bottom: remSize(8px)
+
+    &:last-child
+        margin-bottom: 0
+
+    &__btn
+        position: relative
+        width: remSize(36px)
+        height: @width
+        background-color: $emerald
+        border-radius: $default-radius
+        transition: background-color $t-default
+        cursor: pointer
+
+        &:hover
+            background-color: $light-emerald
+
+        &:active
+            background-color: $dark-emerald
+
+        & .svg-icon
+            centered()
+            width: 42%
+            height: @width
+            fill: $white
+
+        &.is-disabled
+            background-color: $gray
+            opacity: 0.3
+            cursor: default
+            pointer-events: none

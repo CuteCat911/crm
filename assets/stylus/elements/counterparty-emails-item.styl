@@ -1,0 +1,117 @@
+.counterparty-emails-item
+    margin-bottom: remSize(24px)
+    padding: remSize(12px) remSize(16px) remSize(18px)
+    box-sizing: border-box
+    border: remSize(1px) solid $light-gray
+    border-radius: $default-radius
+    box-shadow: $light-shadow
+    transition: background-color $t-default, box-shadow $t-default, border $t-default
+
+    &:last-child
+        margin-bottom: 0
+
+    &__header
+        margin-bottom: remSize(18px)
+        padding-bottom: remSize(12px)
+        position: relative
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        &:after
+            content: ""
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 100%
+            height: remSize(1px)
+            background-color: $light-gray
+            transition: background-color $t-default
+
+    &__name
+        margin-right: remSize(8px)
+        width: remSize(310px)
+        font-size: remSize(18px)
+        font-weight: 500
+        color: $emerald
+        letter-spacing: remSize(0.4px)
+
+    &__id
+        width: s("calc(100% - (%s + %s))", remSize(8px), remSize(310px))
+        font-size: remSize(13px)
+        color: alpha($gray, 0.5)
+        text-align: right
+        transition: color $t-default
+
+    &__item-title
+        margin-bottom: remSize(8px)
+        font-weight: 500
+        color: $dark-blue
+
+    &__item-list
+        display: flex
+        flex-wrap: wrap
+
+    //&__email-wrapper
+    //    margin-right: remSize(24px)
+    //    margin-bottom: remSize(8px)
+    //    position: relative
+    //    display: flex
+    //    align-items: center
+    //    font-size: remSize(15px)
+    //    transition: color $t-default
+    //    cursor: pointer
+    //    outline: none
+    //
+    //    &:after
+    //        content: ""
+    //        position: absolute
+    //        top: 50%
+    //        right: remSize(-12px)
+    //        width: remSize(1px)
+    //        height: 100%
+    //        background-color: alpha($gray, 0.8)
+    //        transform: translate(100%, -50%)
+    //
+    //    &:last-child
+    //        margin-right: 0
+    //
+    //        &:after
+    //            display: none
+    //
+    //    &:hover
+    //        color: $emerald
+    //
+    //        & ^[0]__email-check
+    //            border-color: $emerald
+    //
+    //&__email-name
+    //    margin-right: remSize(4px)
+    //    font-weight: 500
+    //
+    //&__email
+    //    margin-right: remSize(8px)
+    //
+    //&__email-check
+    //    position: relative
+    //    width: remSize(16px)
+    //    height: @width
+    //    border-radius: $default-radius
+    //    border: remSize(1px) solid $gray
+    //    box-sizing: border-box
+    //    transition: background-color $t-default, border-color $t-default
+    //
+    //    & .svg-icon
+    //        centered()
+    //        width: 72%
+    //        height: @width
+    //        opacity: 0
+    //        transition: opacity $t-default, fill $t-default
+    //
+    //    &.is-active
+    //        background-color: alpha($light-emerald, 0.5)
+    //        border-color: $dark-emerald
+    //
+    //        & .svg-icon
+    //            opacity: 1
+    //            fill: $dark-emerald

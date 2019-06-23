@@ -1,0 +1,19 @@
+{% macro default(name, class) %}
+
+    {% if name %}
+        <svg class="svg-icon {{ class }}">
+            <use xlink:href="{{ asset('app/svg-sprite.svg#' ~ name ~ '') }}"></use>
+        </svg>
+    {% endif %}
+
+{% endmacro %}
+
+{% macro color(name, class) %}
+
+    {% if name %}
+        <svg class="svg-icon {{ class }}">
+            <use xlink:href="{{ asset('app/color-svg-sprite.svg#' ~ name ~ '') }}"></use>
+        </svg>
+    {% endif %}
+
+{% endmacro %}

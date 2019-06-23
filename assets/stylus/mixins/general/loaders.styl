@@ -1,0 +1,67 @@
+/*
+  loader-1 - ver. 1.0.0
+  -----
+  Миксин для элемента, который будет играть роль простого прелоудера
+  Принимает в себя параметры:
+    1. $color (цвет) - Отвечает за цвет прелоудера, по дефолту стоит черный.
+    2. $size (размер в пикселях) - Отвечает за размер прелоудера, по дефолту стоит 65px.
+    3. $time (время в секундах) - Отвечает за скорость анимации, по дефолту стоит 0.6s.
+  Размер который указан в пикселях переделывается в rem при помощи миксина remSize.
+
+*/
+
+loader-1($color = $black, $size = 65px, $time = 0.6s)
+    centered("wrong-center")
+    width: remSize($size)
+    height: @width
+    border-radius: 50%
+    border: (@width / 12) solid alpha($color, 0.3)
+    border-left-color: alpha($color, 0.8)
+    box-sizing: border-box
+    transform-origin: 50%
+    animation: centered-spin $time infinite linear
+
+loader-2($color-1, $color-2, $color-3)
+    if ($color-1 and $color-2 and $color-3)
+        centered("wrong-center")
+        width: remSize(90px)
+        height: @width
+        border-radius: 50%
+        border: remSize(3px) solid transparent
+        border-top-color: $color-1
+        animation: centered-spin 2s infinite linear
+
+        &:after,
+        &:before
+            content: ""
+            position: absolute
+            border-radius: 50%
+            border: remSize(3px) solid transparent
+
+        &:after
+            top: remSize(5px)
+            left: @top
+            right: @top
+            bottom: @top
+            border-top-color: $color-2
+            animation: spin 3s infinite linear
+
+        &:before
+            top: remSize(15px)
+            left: @top
+            right: @top
+            bottom: @top
+            border-top-color: $color-3
+            animation: spin 1.5s infinite linear
+
+@keyframes centered-spin
+    from
+        transform: translate(-50%, -50%) rotate(0)
+    to
+        transform: translate(-50%, -50%) rotate(360deg)
+
+@keyframes spin
+    from
+        transform: rotate(0)
+    to
+        transform: rotate(360deg)

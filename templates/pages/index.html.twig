@@ -1,0 +1,20 @@
+{% extends 'layouts/index.html.twig' %}
+
+{% block content %}
+
+    <div class="wrapper">
+        <breadcrumbs v-if="!hideBreadcrumbs"></breadcrumbs>
+    </div>
+    <div class="wrapper">
+        <div class="main__aside-wrapper">
+            <v-aside v-if="!hideAside"></v-aside>
+        </div>
+        <div class="main__content">
+            <router-view name="content"></router-view>
+        </div>
+        <div class="main__aside-btns-wrapper">
+            <router-view name="asideBtns" v-if="!hideAsideBtns"></router-view>
+        </div>
+    </div>
+
+{% endblock %}

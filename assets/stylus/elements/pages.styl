@@ -1,0 +1,40 @@
+.pages
+    display: flex
+    align-items: center
+
+    &__btn
+
+        &--first
+            margin-right: remSize(16px)
+
+        &--last
+            margin-left: remSize(16px)
+
+    &__page
+        padding: remSize(2px) remSize(6px)
+        position: relative
+        font-size: remSize(15px)
+        font-weight: 500
+        color: $blue
+        transition: color $t-default
+        cursor: pointer
+
+        &:hover
+            color: $emerald
+
+        &:after
+            content: ""
+            position: absolute
+            left: 50%
+            bottom: 0
+            width: 72%
+            height: remSize(1px)
+            background-color: transparent
+            transform: translateX(-50%)
+
+        &.is-active
+            color: $emerald
+            pointer-events: none
+
+            &:after
+                background-color: $emerald

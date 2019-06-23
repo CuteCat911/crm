@@ -1,0 +1,68 @@
+.counterparty-wide
+    margin-bottom: remSize(24px)
+    padding: remSize(12px) remSize(16px) remSize(18px)
+    box-sizing: border-box
+    border: remSize(1px) solid $light-gray
+    border-radius: $default-radius
+    box-shadow: $light-shadow
+    transition: background-color $t-default, box-shadow $t-default, border $t-default
+    cursor: pointer
+    outline: none
+
+    &:hover
+        box-shadow: $shadow-hover
+
+    &:last-child
+        margin-bottom: 0
+
+    &.is-select
+        background-color: alpha($light-emerald, 0.4)
+        border-color: $emerald
+
+        & ^[0]__header
+
+            &:after
+                background-color: $emerald
+
+        & ^[0]__title
+            color: $dark-emerald
+
+        & ^[0]__id,
+        & ^[0]__updated-time
+            color: alpha($gray, 0.8)
+
+    &__header
+        margin-bottom: remSize(18px)
+        padding-bottom: remSize(12px)
+        position: relative
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        &:after
+            content: ""
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 100%
+            height: remSize(1px)
+            background-color: $light-gray
+            transition: background-color $t-default
+
+    &__title-wrapper
+        display: flex
+        align-items: center
+
+    &__title
+        margin-right: remSize(6px)
+        font-size: remSize(18px)
+        font-weight: 500
+        color: $emerald
+        letter-spacing: remSize(0.4px)
+        transition: color $t-default
+
+    &__id,
+    &__updated-time
+        font-size: remSize(13px)
+        color: alpha($gray, 0.5)
+        transition: color $t-default

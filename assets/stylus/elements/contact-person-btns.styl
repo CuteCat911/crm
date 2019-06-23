@@ -1,0 +1,29 @@
+.contact-person-btns
+    position: absolute
+    top: remSize(6px)
+    right: @top
+    opacity: 0
+    z-index: -2
+    transition opacity $t-default, z-index $t-default
+
+    &__btn
+        margin-bottom: remSize(6px)
+        position: relative
+        width: remSize(24px)
+        height: @width
+        background-color: $blue
+        border-radius: $default-radius
+        transition: background-color $t-default
+        cursor: pointer
+
+        &:last-child
+            margin-bottom: 0
+
+        &:hover
+            background-color: $dark-blue-2
+
+        & .svg-icon
+            centered()
+            width: 50%
+            height: @width
+            fill: $white

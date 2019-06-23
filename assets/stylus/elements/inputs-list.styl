@@ -1,0 +1,56 @@
+.inputs-list
+    margin-bottom: remSize(32px)
+
+    &__title
+        margin-bottom: remSize(8px)
+        font-weight: 500
+        color: $dark-blue-2
+        letter-spacing: remSize(0.2px)
+
+    &__description
+        line-height: 1.4
+        font-size: remSize(14px)
+        color: $gray
+
+    &__header
+        margin-top: remSize(16px)
+        margin-left: remSize(-8px)
+        margin-bottom: remSize(12px)
+        display: flex
+        width: s("calc(100% + (%s * 2) - %s)", remSize(8px), remSize(112px))
+
+    &__col-title
+        margin: 0 remSize(8px)
+        font-size: remSize(15px)
+        font-weight: 500
+        color: $blue
+
+        for index in 1 ... 48
+
+            &--{index}
+                colWidth(1, index, 8px, 8px)
+
+    &__item
+        margin-bottom: remSize(16px)
+        display: flex
+        align-items: flex-start
+
+        &:last-child
+            margin-bottom: 0
+
+        & .inputs-list-btns
+            margin-top: remSize(1px)
+
+    &__item-wrapper
+        margin-left: remSize(-8px)
+        margin-right: remSize(16px)
+        display: flex
+        width: s("calc(100% + (%s * 2) - %s)", remSize(8px), remSize(112px))
+
+        for index in 1 ... 48
+
+            & .inputs-list-item
+                margin: 0 remSize(8px)
+
+                &--{index}
+                    colWidth(1, index, 8px, 8px)
