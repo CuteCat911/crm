@@ -11,7 +11,7 @@ use App\Entity\MailingItem;
 use App\Service\CronJobService;
 use App\Service\MailerService;
 
-class addSendScheduledMailsCommand extends ContainerAwareCommand
+class AddSendScheduledMailsCommand extends ContainerAwareCommand
 {
 
     private $em;

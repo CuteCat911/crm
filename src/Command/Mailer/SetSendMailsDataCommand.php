@@ -10,7 +10,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Mail;
 use App\Service\Smtp2GoService;
 
-class SetSendedMailsDataCommand extends ContainerAwareCommand
+class SetSendMailsDataCommand extends ContainerAwareCommand
 {
 
     private $em;
@@ -25,7 +25,7 @@ class SetSendedMailsDataCommand extends ContainerAwareCommand
 
     protected function configure()
     {
-        $this->setName('mailer:setSendedMailsData');
+        $this->setName('mailer:setSendMailsData');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -54,9 +54,9 @@ class SetSendedMailsDataCommand extends ContainerAwareCommand
                 $date_diff = $smtp_send_time->diff($send_time);
 
                 if ($recipient != $smtp_data_email->recipient) continue;
-                if ($date_diff->y > 0 && $date_diff->m > 0 && $date_diff->d > 0 && $date_diff->h > 0 && $date_diff > 1) continue;
+                if ($date_diff->y > 0 && $date_diff->m > 0 && $date_diff->d > 0 && $date_diff->h > 0 && $date_diff->i > 2) continue;
 
-                $mail->setSmtpData((array)$smtp_data_email)->setTextStatus($smtp_data_email->status);
+                if ($mail_json_data['status'] === 1) $mail->setSmtpData((array)$smtp_data_email)->setTextStatus($smtp_data_email->status);
 
             }
 

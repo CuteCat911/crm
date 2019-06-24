@@ -17,11 +17,13 @@ class Mail
         'delivered' => 2,
         'ok' => 2,
         'failed' => 3,
-        'deferred' => 4,
+        'defer' => 4,
         'hardbounce' => 5,
+        'refused' => 5,
         'rejected' => 6,
         'complained' => 7,
-        'spam' => 7
+        'spam' => 7,
+        'spam complaint' => 7
     ];
 
     /**
@@ -95,7 +97,7 @@ class Mail
 
     public function setTextStatus(?string $status): ?self
     {
-        $this->status = self::STATUSES[$status];
+        $this->status = self::STATUSES[mb_strtolower($status)];
         return $this;
     }
 

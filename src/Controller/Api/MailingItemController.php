@@ -128,7 +128,7 @@ class MailingItemController extends AbstractController
 
         $mailer->sendMails($mailing_item);
         $mailing_item->setStatus(1)->setSender($user);
-        $cron_job_service->createDelayJob('mailer:setSendedMailsData', '+5 minutes');
+        $cron_job_service->createDelayJob('mailer:setSendMailsData', '+5 minutes');
         $em->flush();
 
         return $response->setSuccess()->json();

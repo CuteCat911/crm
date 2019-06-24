@@ -27,3 +27,4 @@ yarn-error.log
 .env
 public/.htaccess
 public/storage
+data/
