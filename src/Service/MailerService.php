@@ -56,15 +56,32 @@ class MailerService
         $contractor = $email->getContractor();
         $template = $mailing_item->getMailing()->getTemplate();
         $template_name = $template->getServerName();
+        $mailing = $mailing_item->getMailing();
         $new_mail = new Mail();
         $new_mail->setEmail($email)->setMailingItem($mailing_item);
         $this->em->persist($new_mail);
         $this->em->flush();
+
+        if (!$email->isSubscribe()) {
+
+            $this->eventService->createEvent([
+                'parent' => $main_event ? $main_event : null,
+                'name' => 'Не удалось отправить письмо из ' . $mailing->getName() . ', с темой письма: ' . $mailing_item->getTheme() . '. Для ' . $email->getEmail() . '. Пользователь отписался от рассылки.',
+                'client' => $client ? $client : null,
+                'contractor' => $contractor ? $contractor : null,
+                'mail' => $new_mail
+            ]);
+
+            return true;
+
+        }
+
         $theme = $mailing_item->getTheme();
         $twig_template = 'mailings/' . $template_name . '/' . $template_name . '.html.twig';
         $txt_template = 'mailings/' . $template_name . '/' . $template_name . '.txt.twig';
         $params = [
             'mail_id' => $new_mail->getId(),
+            'email_hash' => $email->getHash(),
             'theme' => $theme
         ];
 
@@ -85,7 +102,6 @@ class MailerService
         $this->mailer->send($message);
         $new_mail->setStatus(1)->setSendTime(new \DateTime());
         $this->em->flush();
-        $mailing = $mailing_item->getMailing();
         $this->eventService->createEvent([
             'parent' => $main_event ? $main_event : null,
             'name' => 'Отправлено письмо из ' . $mailing->getName() . ', с темой письма: ' . $mailing_item->getTheme() . '. Для ' . $email->getEmail(),

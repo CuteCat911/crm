@@ -18,6 +18,7 @@ class MailController extends AbstractController
         return $this->render($template, [
             'preview' => true,
             'mail_id' => 1,
+            'email_hash' => 1,
             'theme' => 'Тестовая тема'
         ]);
 

@@ -44,7 +44,7 @@ class AddSendScheduledMailsCommand extends ContainerAwareCommand
 
         $this->mailer->sendMails($mailing_item);
         $mailing_item->setStatus(1);
-        $this->cronJobService->createDelayJob('mailer:setSendedMailsData', '+5 minutes');
+        $this->cronJobService->createDelayJob('mailer:setSendMailsData', '+5 minutes');
         $this->em->flush();
 
         return true;

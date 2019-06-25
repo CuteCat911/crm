@@ -23,6 +23,11 @@ class Email
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=32)
+     */
+    private $hash;
+
+    /**
      * @ORM\Column(type="string", length=128, nullable=true)
      */
     private $name;
@@ -64,6 +69,7 @@ class Email
 
     public function __construct()
     {
+        $this->hash = md5(microtime(1).rand(0, 99999999));
         $this->orderIndex = 0;
         $this->subscribe = true;
         $this->mails = new ArrayCollection();
@@ -72,6 +78,18 @@ class Email
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getHash(): ?string
+    {
+        return $this->hash;
+    }
+
+    public function setHash(): ?self
+    {
+        if ($this->hash) return $this;
+        $this->hash = md5(microtime(1).rand(0, 99999999));
+        return $this;
     }
 
     public function getName(): ?string

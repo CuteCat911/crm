@@ -19,7 +19,7 @@ class MailRepository extends ServiceEntityRepository
         parent::__construct($registry, Mail::class);
     }
 
-    public function getSendedMails(?string $time_modify)
+    public function getSendMails(?string $time_modify)
     {
 
         $time = new \DateTime('now');
@@ -28,6 +28,23 @@ class MailRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('m')
             ->where('m.sendTime > :time')
             ->setParameter(':time', $time)
+            ->getQuery()
+            ->getResult()
+            ;
+
+    }
+
+    public function getSendMailsById(?string $time_modify)
+    {
+
+        $time = new \DateTime('now');
+        $time = $time->modify($time_modify);
+
+        return $this->createQueryBuilder('m')
+            ->where('m.sendTime > :time')
+            ->setParameter(':time', $time)
+            ->having('m.smtpData != :empty')
+            ->setParameter(':empty', 'N;')
             ->getQuery()
             ->getResult()
             ;

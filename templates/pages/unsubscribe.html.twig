@@ -1,0 +1,19 @@
+{% extends 'layouts/message.html.twig' %}
+
+{% block content %}
+
+    <section class="message">
+
+        {% if error is defined and error %}
+            <h1 class="message__title is-error">
+                Упс... Возникла ошибка.
+                <br>
+                Попробуйте попозже.
+            </h1>
+        {% else %}
+            <h1 class="message__title">Вы успешно отписались от рассылки.</h1>
+        {% endif %}
+
+    </section>
+
+{% endblock content %}

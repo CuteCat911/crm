@@ -32,8 +32,8 @@ class SetSendMailsDataCommand extends ContainerAwareCommand
     {
 
         $time_diff = '-10 minutes';
-        $mails = $this->em->getRepository(Mail::class)->getSendedMails($time_diff);
-        $smtp_data = json_decode($this->smtpService->getSendedMailsData($time_diff));
+        $mails = $this->em->getRepository(Mail::class)->getSendMails($time_diff);
+        $smtp_data = json_decode($this->smtpService->getSendMailsData($time_diff));
 
         if (!$smtp_data || !$smtp_data->data || !is_array($smtp_data->data->emails)) return false;
 
@@ -56,7 +56,9 @@ class SetSendMailsDataCommand extends ContainerAwareCommand
                 if ($recipient != $smtp_data_email->recipient) continue;
                 if ($date_diff->y > 0 && $date_diff->m > 0 && $date_diff->d > 0 && $date_diff->h > 0 && $date_diff->i > 2) continue;
 
-                if ($mail_json_data['status'] === 1) $mail->setSmtpData((array)$smtp_data_email)->setTextStatus($smtp_data_email->status);
+                $mail->setSmtpData((array)$smtp_data_email);
+
+                if ($mail_json_data['status'] === 1) $mail->setTextStatus($smtp_data_email->status);
 
             }
 

@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190604113307 extends AbstractMigration
+final class Version20190625113653 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,8 +22,7 @@ final class Version20190604113307 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE email ADD subscribe TINYINT(1) NOT NULL');
-        $this->addSql('ALTER TABLE mailing_item ADD theme VARCHAR(256) NOT NULL');
+        $this->addSql('ALTER TABLE email ADD hash VARCHAR(32) NOT NULL');
     }
 
     public function down(Schema $schema) : void
@@ -31,7 +30,6 @@ final class Version20190604113307 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE email DROP subscribe');
-        $this->addSql('ALTER TABLE mailing_item DROP theme');
+        $this->addSql('ALTER TABLE email DROP hash');
     }
 }

@@ -2,11 +2,9 @@
 
 namespace App\Controller\Api;
 
-use App\Entity\Mail;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
-use App\View\AjaxResponse;
+use App\Entity\Mail;
 
 /**
  * @Route("/api/mail/")
@@ -21,9 +19,6 @@ class MailController extends AbstractController
     {
 
         $em = $this->getDoctrine()->getManager();
-
-        if (!$id) return false;
-
         $mail = $em->getRepository(Mail::class)->find($id);
 
         if (!$mail) return false;
