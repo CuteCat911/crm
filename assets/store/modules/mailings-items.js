@@ -8,7 +8,7 @@ export const MailingsItems = {
         preloader: false,
         selected: [],
         page: 1,
-        countOnPage: 30
+        countOnPage: 100
     },
     getters: {
         items: state => {
