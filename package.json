@@ -6,7 +6,7 @@
         "@babel/plugin-syntax-class-properties": "^7.2.0",
         "@symfony/webpack-encore": "^0.27.0",
         "autoprefixer": "^9.4.7",
-        "axios": "^0.18.0",
+        "axios": "^0.21.1",
         "babel-polyfill": "^6.26.0",
         "babel-preset-env": "^1.7.0",
         "core-js": "^3.0.0",
